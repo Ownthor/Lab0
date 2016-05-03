@@ -51,7 +51,9 @@ int main() {
                 state = Wait;
                 break;
             case DebounceUp:
-                delayMs(50);
+                IFS0bits.T1IF = 0;
+                T1CONbits.ON = 0;
+                delayMs(10);
                 if(Direction == Forward){
                     switch (CurrentLED)  {
                         case LED1:
